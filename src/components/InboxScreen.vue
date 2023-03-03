@@ -1,4 +1,3 @@
-
 <template>
   <PureInboxScreen :error="isError" />
 </template>
@@ -8,7 +7,7 @@ import PureInboxScreen from './PureInboxScreen';
 
 import { computed } from 'vue';
 
-import { useTaskStore } from '@/store';
+import { useTaskStore } from '../store';
 
 export default {
   name: 'InboxScreen',
