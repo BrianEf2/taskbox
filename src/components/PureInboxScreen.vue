@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div v-if="error" class="page lists-show">
@@ -19,6 +18,7 @@
 
 <script>
 import TaskList from './TaskList.vue';
+
 export default {
   name: 'PureInboxScreen',
   components: { TaskList },

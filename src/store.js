@@ -1,3 +1,4 @@
+
 /* A simple Pinia store/actions implementation.
  * A true app would be more complex and separated into different files.
  */
@@ -42,9 +43,10 @@ export const useTaskStore = defineStore({
     },
     getters: {
         getFilteredTasks: (state) => {
-            return state.tasks.filter(
+            const filteredTasks = state.tasks.filter(
                 (t) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
             );
+            return filteredTasks;
         },
     },
 });

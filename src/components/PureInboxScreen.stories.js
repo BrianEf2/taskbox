@@ -1,17 +1,16 @@
+import { app } from "@storybook/vue3";
 
-import { app } from '@storybook/vue3';
+import { fireEvent, within } from "@storybook/testing-library";
 
-import { fireEvent, within } from '@storybook/testing-library';
-
-import { createPinia } from 'pinia';
+import { createPinia } from "pinia";
 
 app.use(createPinia());
 
-import PureInboxScreen from './PureInboxScreen.vue';
+import PureInboxScreen from "./PureInboxScreen.vue";
 
 export default {
-    title: 'PureInboxScreen',
     component: PureInboxScreen,
+    title: "PureInboxScreen",
 };
 
 const Template = (args) => ({
@@ -33,7 +32,7 @@ export const WithInteractions = Template.bind({});
 WithInteractions.play = async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // Simulates pinning the first task
-    await fireEvent.click(canvas.getByLabelText('pinTask-1'));
+    await fireEvent.click(canvas.getByLabelText("pinTask-1"));
     // Simulates pinning the third task
-    await fireEvent.click(canvas.getByLabelText('pinTask-3'));
+    await fireEvent.click(canvas.getByLabelText("pinTask-3"));
 };
